@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "Trues",
+  "version": "0.1.0",
+  "description": "Trues' app extension",
+
+  "content_scripts": [{
+    "css": ["styles.css"],
+    "js": ["content.js"],
+    "matches": ["https://blog.lateral.io/*"]
+  }],
+  "browser_action": {
+    // "default_icon": {                    // optional
+    //   "16": "images/icon16.png",           // optional
+    //   "24": "images/icon24.png",           // optional
+    //   "32": "images/icon32.png"            // optional
+    // },
+    "default_title": "Google Mail",      // optional; shown in tooltip
+    "default_popup": "idk.html"        // optional
+  }
+}
