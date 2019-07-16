@@ -1,1 +1,15 @@
-style 
+.y{
+	color: green;
+	text-align: center;
+}
+.n{
+	color:red;
+	text-align: center;
+}
+.title_table{
+	text-align: center;
+	font-size: 30px;
+}
+.headddd{
+	text-align: center;
+}
