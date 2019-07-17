@@ -3,6 +3,12 @@
 
   "name": "Trues",
   "version": "0.1.0",
+  "icons": {
+    "16": "logo_16.png",
+    "48": "logo_48.png",
+    "128": "logo_128.png"
+  },
+
   "description": "Trues' app extension",
 
   "content_scripts": [{
@@ -12,11 +18,11 @@
   }],
   "browser_action": {
     // "default_icon": {                    // optional
-    //   "16": "images/icon16.png",           // optional
-    //   "24": "images/icon24.png",           // optional
-    //   "32": "images/icon32.png"            // optional
+    //   "16": "images/logo_16.png"          // optional
+    //   // "24": "images/icon24.png",           // optional
+    //   // "32": "images/icon32.png"            // optional
     // },
     "default_title": "Google Mail",      // optional; shown in tooltip
-    "default_popup": "idk.html"        // optional
+    "default_popup": "poppup.html"        // optional
   }
 }
