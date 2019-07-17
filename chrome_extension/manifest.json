@@ -17,6 +17,6 @@
     //   "32": "images/icon32.png"            // optional
     // },
     "default_title": "Google Mail",      // optional; shown in tooltip
-    "default_popup": "idk.html"        // optional
+    "default_popup": "poppup.html"        // optional
   }
 }
