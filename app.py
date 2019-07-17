@@ -13,7 +13,13 @@ app.config['SESSION_TYPE'] = 'filesystem'
 def home():
     return render_template("index.html")
 
+@app.route('/ar')
+def homear():
+    return render_template("arabicindex.html")
 
+@app.route('/he')
+def homehe():
+    return render_template("hebrew.html")
 
 @app.route('/search', methods=["GET",'POST'])
 def search():
