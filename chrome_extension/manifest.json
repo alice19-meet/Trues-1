@@ -10,7 +10,7 @@
   },
 
   "description": "Trues' app extension",
-
+  "permissions": ["tabs"],
   "content_scripts": [{
     "css": ["styles.css"],
     "js": ["content.js"],
