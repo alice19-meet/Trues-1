@@ -9,6 +9,7 @@ class Website(Base):
     __tablename__ = "websites"
     id = Column(Integer, primary_key = True)
     name = Column(String)
+    media_bias_link = Column(String)
     category = Column(String)
     bias = Column(Integer)
     link = Column(String)
