@@ -13,6 +13,7 @@ app.config['SESSION_TYPE'] = 'filesystem'
 def home():
     return render_template("index.html")
 
+
 @app.route('/ar')
 def homear():
     return render_template("arabicindex.html")
