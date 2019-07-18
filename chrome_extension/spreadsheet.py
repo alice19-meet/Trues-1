@@ -21,7 +21,7 @@ cell = sheet.find("http://freewestmedia.com")
 Website_line = (cell.row)
 Website_Info = sheet.row_values(Website_line)
 # print(Website_Info[2])
-
-Website(Website_Info[0], Website_Info[2], Website_Info[3], Website_Info[4])
+for i in range(len(websites)):   
+    Website(Website_Info[0], Website_Info[2], Website_Info[3], Website_Info[4])
 
 

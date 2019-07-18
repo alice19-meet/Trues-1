@@ -6,7 +6,6 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret key'
 
 @app.route('/')
-
 def poppup():
     website = Website_Info
     return render_template("poppup.html", website=website)
