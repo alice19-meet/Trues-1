@@ -1,2 +1,2 @@
 document.getElementById("demo").innerHTML = 
-"Page hostname is: " + window.location.hostname;
+"Page hostname is: " + window.location.hostname; 
