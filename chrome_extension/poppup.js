@@ -7,7 +7,7 @@
       pathname = tabs[0].url;
       // console.log(tabs[0].url);
 
-      do_things_with_url(tabs[0].url);
+      // do_things_with_url(tabs[0].url);
 });
 
 function do_things_with_url(url) {
@@ -34,10 +34,83 @@ function do_things_with_url(url) {
           
             // obj[i].name is the matched result
           }
+
   
         }
+
+      // get_url = $("#url_input").val();
+      data = {"claim": url};
+
+      // a = $.ajax({
+
+      //   url: "https://idir.uta.edu/factchecker/fm/" + "watermelon is cool",
+      //   // url: "https://www.google.com",
+      //   type: "GET",
+      //   headers: {
+      //     "Content-Type": "text/plain",
+      //   },
+      //   data: data,
+      //   success: function(data){
+      //     console.log(data);
+      //   },
+      //   error: function(data) {
+      //     console.log("error");
+      //     console.log(data);
+      // }});
+      // console.log(a);
   return 0;
 };
+
+function loading_factcheck() {
+	console.log("hello");
+	var claim = document.getElementById('claim').value;
+
+	var a = new XMLHttpRequest();
+	a.open('GET', "https://idir.uta.edu/factchecker/update_fm?claim=" + claim, true);
+	a.onreadystatechange = function(response) {
+		console.log("this worked");
+		if(a.readyState == 4) {
+			//console.log(a);
+			console.log(a.responseText);
+			var parser = new DOMParser();
+			var htmlDoc = parser.parseFromString(a.responseText, 'text/html');
+			console.log(htmlDoc);
+			document.getElementsByClassName("hi")[0].innerHTML=a.responseText;
+			// alert(htmlDoc.getElementsByClassName('component-title')[0].innerText);
+			
+		}
+	};
+	a.send();
+}
+	
+console.log("extension loaded");
+
+document.addEventListener('DOMContentLoaded', function (event) {
+  document.querySelector('button').addEventListener('click', test);
+});
+
+
+// function test() {
+// 	console.log("testing");
+//       // a = $.ajax({
+
+//       //   url: "https://idir.uta.edu/factchecker/update_fm",
+//       //   // url: "https://www.google.com",
+//       //   type: "GET",
+//       //   headers: {
+//       //     "Content-Type": "text/plain",
+//       //   },
+//       //   data: {"claim": "bananas are straight"},
+//       //   success: function(data){
+//       //     console.log(data);
+//       //   },
+//       //   error: function(data) {
+//       //     console.log("error");
+//       //     console.log(data);
+//       // }});
+// }
+
+
 
 // document.getElementById("dem").innerHTML = pathname;
       
@@ -66,7 +139,7 @@ function do_things_with_url(url) {
       // }
 
 
-      // const rp = require('request-promise');
+      // const rp = require('request-proise');
       // const url = pathname;
 
       // rp(url)
