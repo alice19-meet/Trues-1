@@ -5,7 +5,6 @@
       var y = "";
       chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
       pathname = tabs[0].url;
-      // console.log(tabs[0].url);
 
       // do_things_with_url(tabs[0].url);
 });
@@ -15,9 +14,11 @@ function do_things_with_url(url) {
         // iterate over each element in the array
         for (var i = 0; i < obj.length; i++){
           // look for the entry with a matching `code` value
-          if (obj[i].link == url){
+          var link_revise = obj[i].link.concat("/");
+          if (obj[i].link == url || link_revise == url){
              // we found it
             x = obj[i].category;
+            console.log(x)
             document.getElementById("demo").innerHTML = x;
             
             console.log(x)
@@ -27,7 +28,8 @@ function do_things_with_url(url) {
         }
         for (var s = 0; s < obj.length; s++){
           // look for the entry with a matchinsg `code` value
-          if (obj[s].link == pathname){
+          var link_revise = obj[s].link.concat("/");
+          if (obj[s].link == pathname || link_revise == url){
              // we found it
             y = obj[s].bias;
             document.getElementById("deo").innerHTML = y;
