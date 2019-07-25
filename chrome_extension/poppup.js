@@ -61,36 +61,36 @@ function do_things_with_url(url) {
   return 0;
 };
 
-function loading_factcheck() {
-	console.log("hello");
-	var claim = document.getElementById('claim').value;
+// function loading_factcheck() {
+// 	console.log("hello");
+// 	var claim = document.getElementById('claim').value;
 
-	var a = new XMLHttpRequest();
-	a.open('GET', "https://idir.uta.edu/factchecker/update_fm?claim=" + claim, true);
-	a.onreadystatechange = function(response) {
-		console.log("this worked");
-		if(a.readyState == 4) {
-			//console.log(a);
-			console.log(a.responseText);
-			var parser = new DOMParser();
-			var htmlDoc = parser.parseFromString(a.responseText, 'text/html');
-			console.log(htmlDoc);
-			document.getElementsByClassName("hi")[0].innerHTML=a.responseText;
-			// alert(htmlDoc.getElementsByClassName('component-title')[0].innerText);
+// 	var a = new XMLHttpRequest();
+// 	a.open('GET', "https://idir.uta.edu/factchecker/update_fm?claim=" + claim, true);
+// 	a.onreadystatechange = function(response) {
+// 		console.log("this worked");
+// 		if(a.readyState == 4) {
+// 			//console.log(a);
+// 			console.log(a.responseText);
+// 			var parser = new DOMParser();
+// 			var htmlDoc = parser.parseFromString(a.responseText, 'text/html');
+// 			console.log(htmlDoc);
+// 			document.getElementsByClassName("hi")[0].innerHTML=a.responseText;
+// 			// alert(htmlDoc.getElementsByClassName('component-title')[0].innerText);
 			
-		}
-	};
-	a.send();
-}
+// 		}
+// 	};
+// 	a.send();
+// }
 	
-console.log("extension loaded");
+// console.log("extension loaded");
 
-document.addEventListener('DOMContentLoaded', function (event) {
-  document.querySelector('button').addEventListener('click', test);
-});
+// document.addEventListener('DOMContentLoaded', function (event) {
+//   document.querySelector('button').addEventListener('click', test);
+// });
 
 
-// function test() {
+// // function test() {
 // 	console.log("testing");
 //       // a = $.ajax({
 
