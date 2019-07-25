@@ -11,33 +11,47 @@
 
 function do_things_with_url(url) {
   document.getElementById("URL").innerHTML = url;
-        // iterate over each element in the array
-        for (var i = 0; i < Websites.length; i++){
-          // look for the entry with a matching `code` value
-          var link_revise = Websites[i].link.concat("/");
-          if (Websites[i].link == url || link_revise == url){
-             // we found it
-            Category = Websites[i].category;
-            document.getElementById("category").innerHTML = Category;
-            // Websites[i].name is the matched result
+        var slash = url.search("//");
+        for (var i = 0; i < websites.length; i++){
+          // var link_revise = websites[i].link.concat("/");
+          if (slash > 0 ) {
+            var res = url.substr(slash+2);
+            var split = res.split("/");
+            var partOfLink = split[0];
+              // document.getElementById("n").innerHTML = partOfLink;
+              for (websites[i].link == partOfLink){
+                  category = websites[i].category;
+                  document.getElementById("category").innerHTML = category; 
+              }
+          } else {
+              var split = url.split("/");
+              var partOfLink = split[0];
+                // document.getElementById("n").innerHTML = partOfLink;
+                for (websites[i].link == partOfLink){
+                  category = websites[i].category;
+                  document.getElementById("category").innerHTML = category;
           }
-  
+      }
+      for (var s = 0; s < Websites.length; s++){
+        // var link_revise = websites[i].link.concat("/");
+        if (slash > 0 ) {
+          var res = url.substr(slash+2);
+          var split = res.split("/");
+          var partOfLink = split[0];
+            // document.getElementById("n").innerHTML = partOfLink;
+            for (websites[s].link == partOfLink){
+              Bias = websites[s].bias;
+              document.getElementById("Bias").innerHTML = Bias;
+            }
+        } else {
+            var split = url.split("/");
+            var partOfLink = split[0];
+              // document.getElementById("n").innerHTML = partOfLink;
+              for (websites[s].link == partOfLink){
+                Bias = websites[s].bias;
+                document.getElementById("Bias").innerHTML = Bias;
         }
-        for (var s = 0; s < Websites.length; s++){
-          // look for the entry with a matchinsg `code` value
-          var link_revise = Websites[s].link.concat("/");
-          if (Websites[s].link == pathname || link_revise == url){
-             // we found it
-            Bias = Websites[s].bias;
-            document.getElementById("Bias").innerHTML = Bias;
-          
-            // Websites[i].name is the matched result
-          }
-  
-        }
-  return 0;
-};
-
+    }
 // document.getElementById("dem").innerHTML = pathname;
       
       // // iterate over each element in the array
