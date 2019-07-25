@@ -118,9 +118,10 @@ function loading_factcheck() {
 // 	};
 // 	a.send();
 // }
-	
-// console.log("extension loaded");
 
+document.addEventListener('DOMContentLoaded', function (event) {
+  document.querySelector('button').addEventListener('click', loading_factcheck);
+});
 
 // document.addEventListener('DOMContentLoaded', function (event) {
 //   document.querySelector('button').addEventListener('click', test);
