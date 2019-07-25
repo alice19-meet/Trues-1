@@ -73,13 +73,26 @@ function loading_factcheck() {
 		console.log("this worked");
 		if(a.readyState == 4) {
 			//console.log(a);
-			console.log(a.responseText);
+			// console.log(a.responseText);
 			var parser = new DOMParser();
 			var htmlDoc = parser.parseFromString(a.responseText, 'text/html');
-			console.log(htmlDoc);
-			document.getElementsByClassName("hi")[0].innerHTML=a.responseText;
+			// console.log(htmlDoc);
+			// console.log("GETTING TOP TRHEE");
+			// var topThree = $('ul').find('li:lt(3)');
+			// console.log("TOP TRHEE ELEMENTS: " + topThree);
+			// document.getElementsByClassName("hi")[0].innerHTML=a.responseText;
 			// alert(htmlDoc.getElementsByClassName('component-title')[0].innerText);
-			
+			var unorderedList = htmlDoc.getElementsByClassName("list-group")[0].children;
+		
+			// var topThree = $('ul').find('li:lt(3)');
+			// console.log("TOP TRHEE ELEMENTS: " + String(topThree));
+			// var unorderedList= htmlDoc.getElementsByTagName("ul")[0].innerHTML.getElementsByTagName("li")[0];
+			//var unorderedList= htmlDoc.getElementsByTagName("ul")[0].innerHTML.getElementsByTagName("li")[0];
+			console.log(unorderedList);
+
+			document.getElementsByClassName("hi")[0].innerHTML=unorderedList[0].innerHTML;
+			document.getElementsByClassName("hi")[1].innerHTML=unorderedList[1].innerHTML;
+			document.getElementsByClassName("hi")[2].innerHTML=unorderedList[2].innerHTML;
 		}
 	};
 	a.send();
@@ -88,7 +101,7 @@ function loading_factcheck() {
 console.log("extension loaded");
 
 document.addEventListener('DOMContentLoaded', function (event) {
-  document.querySelector('button').addEventListener('click', test);
+  document.querySelector('button').addEventListener('click', loading_factcheck);
 });
 
 
