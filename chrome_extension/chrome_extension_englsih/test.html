@@ -1,0 +1,37 @@
+<head>
+  
+</head>
+<body>  
+  <button type="button" onclick="load()">Load API Content</button>
+  <input type="text" placeholder="url" id="url_input">
+  <p id="content"></p>
+ <script>
+var url;
+chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+     url = tabs[0].url;
+ });
+
+function load(){
+      get_url = $("#url_input").val();
+      data = {"claim": get_url};
+
+      $.ajax({
+
+        url: "https://idir.uta.edu/factchecker/update_fm",
+        type: "GET",
+        headers: {
+          "Content-Type": "text/plain",
+        },
+        data: data,
+        success: function(data){
+          console.log(data);
+        },
+        error: function(data) {
+          console.log("error");
+        }
+      });
+}
+     </script>
+     <div id="result"></div>
+     <script type="text/javascript" src=""></script>
+   </body>
