@@ -16,13 +16,11 @@
   ],
 
    "content_scripts": [{
-//css": ["styles.css"],
-    // "js": ["content.js"],
     "js": ["poppup.js"],
     "matches": ["https://blog.lateral.io/*"]
   }],
   "content_security_policy": "script-src 'self' blob: filesystem: chrome-extension-resource:; object-src 'self'",
-  // "content_security_policy": "script-src 'self' https://ajax.googleapis.com; script-src 'unsafe-inline' blob: filesystem; object-src 'self'",
+  
 
 
   "browser_action": {
@@ -30,7 +28,6 @@
 
     "default_title": "Google Mail",        
 
-    // "default_popup": "poppup.html"      
 
     "default_popup": "poppup.html"
   }
