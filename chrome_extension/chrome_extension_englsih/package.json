@@ -1,0 +1,17 @@
+{
+  "name": "chrome_extension",
+  "version": "1.0.0",
+  "description": "See post: https://blog.lateral.io/2016/04/create-chrome-extension-modify-websites-html-css/",
+  "main": "content.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "google-spreadsheet": "^2.0.7",
+    "rapydscript": "^0.5.60"
+  },
+  "devDependencies": {}
+}

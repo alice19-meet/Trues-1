@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display the array values after the split.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="n"></p>
+<p id="demo"> </p>
+
+<script>
+function myFunction() {
+//   var url = "ndjas//www.w3schools.com/jsref/tryit.asp?filename=tryjsref_split4";
+  var slash = url.search("//");
+ // var slashOrNo = url.startsWith("//",slash);
+  if (slash > 0 ) {
+      var res = url.substr(slash+2);
+      var split = res.split("/");
+      var partOfLink = split[0];
+        document.getElementById("n").innerHTML = partOfLink;
+        for (websites[i].link == url){
+            category = websites[i].category;
+            document.getElementById("category").innerHTML = category; 
+        }
+    } else {
+        var split = url.split("/");
+        var partOfLink = split[0];
+          document.getElementById("n").innerHTML = partOfLink;
+    }
+}
+// function for poppup.js
+function do_things_with_url(url) {
+  document.getElementById("URL").innerHTML = url;
+        var slash = url.search("//");
+        for (var i = 0; i < websites.length; i++){
+          // var link_revise = websites[i].link.concat("/");
+          if (slash > 0 ) {
+            var res = url.substr(slash+2);
+            var split = res.split("/");
+            var partOfLink = split[0];
+              // document.getElementById("n").innerHTML = partOfLink;
+              for (websites[i].link == partOfLink){
+                  category = websites[i].category;
+                  document.getElementById("category").innerHTML = category; 
+              }
+          } else {
+              var split = url.split("/");
+              var partOfLink = split[0];
+                // document.getElementById("n").innerHTML = partOfLink;
+                for (websites[i].link == partOfLink){
+                  category = websites[i].category;
+                  document.getElementById("category").innerHTML = category;
+          }
+      }
+
+</script>
+
+</body>
+</html>
