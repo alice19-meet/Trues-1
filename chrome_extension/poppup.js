@@ -37,31 +37,29 @@ function do_things_with_url(url) {
 
     }
 
-      for (var s = 0; s < Websites.length; s++){
-        // var link_revise = websites[i].link.concat("/");
-        if (slash > 0 ) {
-          var res = url.substr(slash+2);
-          var split = res.split("/");
+    for (var s = 0; s < websites.length; s++){
+      // var link_revise = websites[i].link.concat("/");
+      if (slash > 0 ) {
+        var res = url.substr(slash+2);
+        var split = res.split("/");
+        var partOfLink = split[0];
+          // document.getElementById("n").innerHTML = partOfLink;
+          if (websites[s].link == partOfLink){
+            Bias = websites[s].bias;
+            document.getElementById("Bias").innerHTML = Bias;
+          }
+      } else {
+          var split = url.split("/");
           var partOfLink = split[0];
             // document.getElementById("n").innerHTML = partOfLink;
             if (websites[s].link == partOfLink){
-              Bias = websites[s].bias;
-              document.getElementById("Bias").innerHTML = Bias;
-            }
-        } else {
-            var split = url.split("/");
-            var partOfLink = split[0];
-              // document.getElementById("n").innerHTML = partOfLink;
-              if (websites[s].link == partOfLink){
-                Bias = websites[s].bias;
-                document.getElementById("Bias").innerHTML = Bias;
-        }
+            Bias = websites[s].bias;
+            document.getElementById("Bias").innerHTML = Bias;
     }
+  }
 
-
-
-  return 0;
-};
+}
+return 0;
 }
 
 // document.getElementById("dem").innerHTML = pathname;
@@ -126,9 +124,32 @@ function loading_factcheck() {
 	
 // console.log("extension loaded");
 
-// document.addEventListener('DOMContentLoaded', function (event) {
-//   document.querySelector('button').addEventListener('click', test);
-// });
+// function loading_factcheck() {
+// 	console.log("hello");
+// 	var claim = document.getElementById('claim').value;
+
+// 	var a = new XMLHttpRequest();
+// 	a.open('GET', "https://idir.uta.edu/factchecker/update_fm?claim=" + claim, true);
+// 	a.onreadystatechange = function(response) {
+// 		console.log("this worked");
+// 		if(a.readyState == 4) {
+// 			//console.log(a);
+// 			console.log(a.responseText);
+// 			var parser = new DOMParser();
+// 			var htmlDoc = parser.parseFromString(a.responseText, 'text/html');
+// 			console.log(htmlDoc);
+// 			document.getElementsByClassName("hi")[0].innerHTML=a.responseText;
+// 			// alert(htmlDoc.getElementsByClassName('component-title')[0].innerText);
+			
+// 		}
+// 	};
+// 	a.send();
+// }
+
+document.addEventListener('DOMContentLoaded', function (event) {
+  document.querySelector('button').addEventListener('click', loading_factcheck);
+});
+
 
 
 // // function test() {
