@@ -123,9 +123,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
   document.querySelector('button').addEventListener('click', loading_factcheck);
 });
 
-// document.addEventListener('DOMContentLoaded', function (event) {
-//   document.querySelector('button').addEventListener('click', test);
-// });
+document.addEventListener('DOMContentLoaded', function (event) {
+  document.querySelector('button').addEventListener('click', test);
+});
 
 
 // // function test() {
