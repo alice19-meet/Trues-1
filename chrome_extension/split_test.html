@@ -33,26 +33,28 @@ function myFunction() {
 function do_things_with_url(url) {
   document.getElementById("URL").innerHTML = url;
         var slash = url.search("//");
-        for (var i = 0; i < websites.length; i++){
+        for (var s = 0; s < websites.length; s++){
           // var link_revise = websites[i].link.concat("/");
           if (slash > 0 ) {
             var res = url.substr(slash+2);
             var split = res.split("/");
             var partOfLink = split[0];
               // document.getElementById("n").innerHTML = partOfLink;
-              for (websites[i].link == partOfLink){
-                  category = websites[i].category;
-                  document.getElementById("category").innerHTML = category; 
+              if (websites[s].link == partOfLink){
+                Bias = websites[s].bias;
+                document.getElementById("Bias").innerHTML = Bias;
               }
           } else {
               var split = url.split("/");
               var partOfLink = split[0];
                 // document.getElementById("n").innerHTML = partOfLink;
-                for (websites[i].link == partOfLink){
-                  category = websites[i].category;
-                  document.getElementById("category").innerHTML = category;
-          }
+                if (websites[s].link == partOfLink){
+                Bias = websites[s].bias;
+                document.getElementById("Bias").innerHTML = Bias;
+        }
       }
+
+    }
 
 </script>
 
