@@ -46,11 +46,13 @@ function do_things_with_url(url) {
           // document.getElementById("n").innerHTML = partOfLink;
           if (websites[s].link == partOfLink){
             Bias = websites[s].bias;
+            console.log(Bias)
             document.getElementById("Bias").innerHTML = Bias;
           }
       } else {
           var split = url.split("/");
           var partOfLink = split[0];
+          console.log(partOfLink)
             // document.getElementById("n").innerHTML = partOfLink;
             if (websites[s].link == partOfLink){
             Bias = websites[s].bias;

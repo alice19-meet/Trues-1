@@ -1,8 +1,9 @@
-function grammar() {
-	var sentence = document.getElementById("sentence").value
-  var params = "text="+sentence+"&language=en-US&enabedOnly=false";
+$('#Grammar_Button').click(function grammar(){
+  var sentence =document.getElementById("s").value;
+  console.log(sentence)
+  var params ="text="+sentence+"&language=en-US&enabedOnly=false";
   var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", 'https://languagetool.org/api/v2/check', true);
+  xhttp.open("POST", 'https://languagetool.org/api/v2/check?'+params, true);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.setRequestHeader('Accept', 'application/json');
   xhttp.onreadystatechange = function() {
@@ -13,5 +14,5 @@ function grammar() {
       	document.getElementById("demo").innerHTML = json.matches;
     }
   }
-  xhttp.send(params);
-}
+  xhttp.send();
+});
