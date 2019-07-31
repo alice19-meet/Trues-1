@@ -16,7 +16,19 @@ function test() {
 			var parser = new DOMParser();
 			var htmlDoc = parser.parseFromString(a.responseText, 'text/html');
 			console.log(htmlDoc);
-			document.getElementsByClassName("hi")[0].innerHTML=a.responseText;
+			console.log("GETTING TOP TRHEE");
+			var unorderedList = htmlDoc.getElementsByClassName("list-group")[0].childNodes;
+		
+			// var topThree = $('ul').find('li:lt(3)');
+			// console.log("TOP TRHEE ELEMENTS: " + String(topThree));
+			// var unorderedList= htmlDoc.getElementsByTagName("ul")[0].innerHTML.getElementsByTagName("li")[0];
+			//var unorderedList= htmlDoc.getElementsByTagName("ul")[0].innerHTML.getElementsByTagName("li")[0];
+			console.log(unorderedList);
+
+			document.getElementsByClassName("hi")[0].innerHTML=unorderedList[0].innerHTML;
+			document.getElementsByClassName("hi")[1].innerHTML=unorderedList[1].innerHTML;
+			document.getElementsByClassName("hi")[2].innerHTML=unorderedList[2].innerHTML;
+			// document.getElementsByClassName("hi")[0].innerHTML=a.responseText;
 			// alert(htmlDoc.getElementsByClassName('component-title')[0].innerText);
 			
 		}
