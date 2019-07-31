@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, redirect, request
 from flask import session as login_session
-from database import *
+# from database import *
 
 
 app = Flask(__name__)
