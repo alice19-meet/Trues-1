@@ -18,7 +18,7 @@ Website_Info = sheet.row_values(Website_line)
 print(Website_Info)
 Website = json.dumps(websites)
 print(Website)
-print(websites)
+# print(web)
 
 # print(Website)
 with open('websites.txt', 'w') as outfile:
