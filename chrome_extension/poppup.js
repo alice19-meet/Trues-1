@@ -127,7 +127,10 @@ function loading_factcheck() {
 			console.log(htmlDoc);
 			document.getElementsByClassName("hi")[0].innerHTML=a.responseText;
 			// alert(htmlDoc.getElementsByClassName('component-title')[0].innerText);
-			
+			document.getElementsByClassName("hi")[0].innerHTML=unorderedList[0].innerHTML;
+			document.getElementsByClassName("hi")[1].innerHTML=unorderedList[1].innerHTML;
+			document.getElementsByClassName("hi")[2].innerHTML=unorderedList[2].innerHTML;
+		
 		}
 	};
 	a.send();
