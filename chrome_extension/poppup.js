@@ -61,7 +61,18 @@ function do_things_with_url(url) {
 }
 return 0;
 }
+function thanks() {
+          var x = document.getElementsByClassName("buttonss");
+          x[0].innerHTML = "Thank you for your feedback!";
+          x[1].innerHTML = "";
+          x[2].innerHTML = '';
+        }
 
+window.addEventListener('load', function load(event){
+    var createButton = document.getElementsByClassName('buttonss');
+    createButton[1].addEventListener('click', function() { thanks(); });
+    createButton[2].addEventListener('click', function() { thanks(); });
+})
 // document.getElementById("dem").innerHTML = pathname;
       
       // // iterate over each element in the array

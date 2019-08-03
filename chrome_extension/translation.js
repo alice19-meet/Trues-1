@@ -45,10 +45,10 @@ function _extractFromLDJson(parsedHTML) {
 function _extractFromMeta(parsedHTML) {
 	var metaDate = null;
 	for (meta in parsedHTML.search("meta")){
-		var metaName = meta.get('name', '').lower()
-        var itemProp = meta.get('itemprop', '').lower()
-        var httpEquiv = meta.get('http-equiv', '').lower()
-        var metaProperty = meta.get('property', '').lower()
+		var metaName = meta.get('name', '').toLowerCase()
+        var itemProp = meta.get('itemprop', '').toLowerCase()
+        var httpEquiv = meta.get('http-equiv', '').toLowerCase()
+        var metaProperty = meta.get('property', '').toLowerCase()
 	}
 // 			if ('pubdate' == metaName){
 // 		            metaDate = meta['content'].strip()

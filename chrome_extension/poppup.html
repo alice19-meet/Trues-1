@@ -1,56 +1,161 @@
 <!DOCTYPE html>
- <html>
-   <head>
+<html>
+
+<head>
 
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> -->
-<script src="database.js"></script>
-<script src="jquery-1.5.2.min.js"></script>
-     <style>
-       button {
-         height: 24px;
-         width: 90px;
+    <meta content="utf-8" http-equiv="encoding">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> -->
+    <script src="database.js"></script>
+    <script src="jquery-1.5.2.min.js"></script>
+    <style>
+        button {
+            height: 24px;
+            width: 90px;
+            outline: none;
+        }
+        
+        .buttonss {
+            display: inline;
+        }
+        
+        #Feedback {
+            vertical-align: super;
+        }
 
-         outline: none;
-       }
-     /*  #greenBtn{
-         height: 100px;
-         width: 50px;
-         outline: none;
-         color : rgb(97, 196, 67)
-       }*/
-     </style>
-<script type="text/javascript" src="grammar.js"></script>
-<script src="database.js"></script>
-     <script src="poppup.js"></script> 
-     <script src="database.js"></script>  </head>
-   <body>
-     <input type="image" src="logo.png" name="image" width="150" height="95">
-     <h2>Information about the website: </h2>
-     <h3 >This website is </h3><h3 id="category"></h3>
-     <h3>Degree of Bias: </h3><h3 id="Bias"></h3>
-     <h3 id="URL"></h3>
-    
+        #claim {
+            width: 50%;
+        }
+        #sentence{
+            width: 50%;
+        }
+        #content {
+            width: 450px;
+            word-wrap: break-word;
+            text-align: center;
+        }
+        .fancybutton{
+            border-radius: 10px;
+            color: white;
+            background-color: #044B7F; 
+            border-color: #044B7F;
+            border-width: 2px;
+            padding: 3px;
+            box-shadow: none;
+            border-style: solid;
+        }
+        .names{
+            border-radius: 15px;
+            border-color: #044B7F;
+            border-width: thin;
+            border-style: solid;
+            width: 100px;
+            height: 20px;
+            margin-bottom: 6px;
+            margin-left: 10%;
+            /*white-space: pre-line;*/
+        }
+        /*.gradientbar{
+            border-radius: 15px;
+            border-style: solid;
+            border-color:black;
+            border-width: thin;
 
-     <h4 id="date"></h4>
 
-     <button type="button">fact check</button>
-     <input type="text" placeholder="claim" id="claim">
-      <div class="hi">
-        <!-- inner html -->
-       <br>
+        }*/
+
+        .names span {
+            color: #044B7F;
+            font-size: 10px;
+            top: 2px;
+            font-weight: bold;
+           position: relative;
+           text-align: center;
+        }
+
+        input[type=text] {
+            border-radius: 10px;
+            padding: 5px;
+            border-color: #aaaaaa;
+            border-style: solid;
+            box-shadow: none;
+            text-shadow: none;
+
+        }
+        .howcontentlooks{
+            border-color: green;
+            border-radius:15px;
+        }
+        .inline2{
+            display: inline;
+        }
+        .inline1{
+            display: inline;
+        }
+    </style>
+
+    <script type="text/javascript" src="grammar.js"></script>
+    <script src="database.js"></script>
+    <script src="poppup.js"></script>
+    <script src="database.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <input type="image" src="logo.png" name="image" width="150" height="95">
+       
+        <div class="howcontentlooks">
+            <span id="thewhereithappens">Content looks reliable</span>
+        </div>
+        <h2 >We checked "name" and found: </h2>
+        <div class="names">
+            <span>Political Affiliation</span>
+        </div>  
+        <span id="category"></span>
+        <div class="inline1">
+        <div class="names">
+            <span>Degree of Bias</span>
+        </div>
+        <div class="gradientbar" id="bias"></div>
+        </div>
+        <div class="inline2">
+        <div class="names">
+            <span>Click-Bait</span>
+        </div>
+        <div class="gradientbar" id="clickbait"></div>
+        </div>
+        <h4 id="date"></h4>
+
+        
+        <input type="text" placeholder="Paste your claim here" id="claim">
+        <button type="button" class="fancybutton">Fact Check</button>
+        <div class="hi">
+            <!-- inner html -->
+            <br>
+        </div>
+        <div id="demo">
+            <form action="/action_page.php">
+                <input type="text" id="sentence" placeholder ="Paste the text here">
+           
+                <button type="button" class="fancybutton" onclick="grammar()">Grammar</button>
+            </form>
+        </div>
+        <div class="hi"> </div>
+        <div class="hi"> </div>
+        <script src="poppup.js">
+        </script>
+
+        <div class="buttonss">
+            <h3 id="Feedback">Feedback on Final Result: </h3>
+        </div>
+        <div class="buttonss">
+            <input type="image" src="like.png" name="submitresult" height="30" width="30">
+        </div>
+        <div class="buttonss">
+            <input type="image" src="dislike.png" name="submitresult" height="30" width="30">
+        </div>
+
     </div>
-     <div id="demo">
- 	 <form action="/action_page.php">
-	 grammer checker: <input type="text" id="sentence"><br>
- 	 <button type="button" onclick="grammar()">grammar check</button>
-	 </form>
-	</div>
-     <div class="hi"> </div>
-     <div class="hi"> </div>
-     <script src="poppup.js">
-    </script>
-   </body>
+</body>
 
 </html>
