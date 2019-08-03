@@ -27,9 +27,14 @@
         }
         #category{
             color: black;
-            background-color: red;
+            font-size: 20px;
+            margin-left: 110px;
         }
-        
+        #Bias{
+            color: black;
+            font-size: 20px;
+            margin-left: 100px;
+        }
         #claim {
             width: 50%;
         }
@@ -99,8 +104,18 @@
         }
         
         .howcontentlooks {
-            border-color: green;
+            border-color: blue;
             border-radius: 15px;
+            border-style: solid;
+            width: 300px;
+            height: 30px;
+            margin-left: 15%;
+            margin-bottom: 10px;
+        }
+        #thewhereithappens{
+            color: blue;
+            font-weight: bold;
+            font-size: 20px;
         }
         
         .info-row {
@@ -108,7 +123,11 @@
             display: flex;
             align-items: center;
         }
-        
+        .title{
+            display: inline;
+
+        }
+      
     </style>
 </head>
 
@@ -119,18 +138,21 @@
         <div class="howcontentlooks">
             <span id="thewhereithappens">Content looks reliable</span>
         </div>
-        <h2>We checked</h2>
-        <h2 id="website"></h2>
-        <h2> and found: </h2>
+        <h2 class="title">We checked</h2>
+        <h2 id="website" class="title"></h2>
+        <h2 class="title"> and found: </h2>
+        <div class="info-row">
         <div class="names">
             <span>Political Affiliation</span>
         </div>
-        <span id="category"></span>
+        <span id="category" ></span>
+    </div>
         <div class="info-row">
             <div class="names">
                 <span>Degree of Bias</span>
             </div>
-            <div class="gradientbar" id="bias"></div>
+            <!-- <div class="gradientbar"></div> -->
+            <span id="Bias"></span>
         </div>
         <div class="info-row">
             <div class="names">

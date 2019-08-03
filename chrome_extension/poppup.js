@@ -6,9 +6,13 @@
      	var x ="";
     	var y = "";
 
+chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+      pathname = tabs[0].url;
+
+      do_things_with_url(pathname);
+});
 
 function do_things_with_url(url) {
-  document.getElementById("URL").innerHTML = url;
         var slash = url.search("//");
         console.log(slash);
         for (var i = 0; i < websites.length; i++){
@@ -17,10 +21,13 @@ function do_things_with_url(url) {
             var res = url.substr(slash+2);
             var split = res.split("/");
             var partOfLink = split[0]; 
+            console.log(partOfLink)
               // document.getElementById("n").innerHTML = partOfLink;
               if (websites[i].link == partOfLink) {
                   category = websites[i].category;
                   name =  websites[i].name;
+                  console.log(name);
+                  console.log(category);
                   document.getElementById("category").innerHTML = category;
                   document.getElementById("website").innerHTML = name; 
               }
@@ -31,6 +38,8 @@ function do_things_with_url(url) {
                 if (websites[i].link == partOfLink){
                   category = websites[i].category;
                   name = websites[i].name;
+                  console.log(name);
+                  console.log(category);
                   document.getElementById("category").innerHTML = category;
                   document.getElementById("website").innerHTML = name;
           }
@@ -47,15 +56,17 @@ function do_things_with_url(url) {
           // document.getElementById("n").innerHTML = partOfLink;
           if (websites[s].link == partOfLink){
             Bias = websites[s].bias;
+            console.log(Bias);
             document.getElementById("Bias").innerHTML = Bias;
           }
       } else {
           var split = url.split("/");
           var partOfLink = split[0];
-          // console.log(partOfLink)
+          console.log(partOfLink)
             // document.getElementById("n").innerHTML = partOfLink;
             if (websites[s].link == partOfLink){
             Bias = websites[s].bias;
+            console.log(Bias);
             document.getElementById("Bias").innerHTML = Bias;
     }
   }
@@ -167,11 +178,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 });
 
 
-chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
-      pathname = tabs[0].url;
 
-      do_things_with_url(pathname);
-});
 // // function test() {
 // 	console.log("testing");
 //       // a = $.ajax({
