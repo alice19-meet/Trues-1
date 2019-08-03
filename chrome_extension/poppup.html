@@ -23,30 +23,34 @@
         #Feedback {
             vertical-align: super;
         }
-
+        
         #claim {
             width: 50%;
         }
-        #sentence{
+        
+        #sentence {
             width: 50%;
         }
+        
         #content {
             width: 450px;
             word-wrap: break-word;
             text-align: center;
             font-family: 'Poppins', serif;
         }
-        .fancybutton{
+        
+        .fancybutton {
             border-radius: 10px;
             color: white;
-            background-color: #044B7F; 
+            background-color: #044B7F;
             border-color: #044B7F;
             border-width: 2px;
             padding: 3px;
             box-shadow: none;
             border-style: solid;
         }
-        .names{
+        
+        .names {
             border-radius: 15px;
             border-color: #044B7F;
             border-width: thin;
@@ -55,26 +59,30 @@
             height: 20px;
             margin-bottom: 6px;
             margin-left: 10%;
+            /*display: inline;*/
+            /*float: left;*/
             /*white-space: pre-line;*/
         }
-        /*.gradientbar{
-            border-radius: 15px;
-            border-style: solid;
-            border-color:black;
-            border-width: thin;
-
-
-        }*/
-
+        .gradientbar{
+            /*display: inline;*/
+            width: 200px;
+            height: 10px;
+            background: rgb(15,255,0);
+            background-image: linear-gradient(90deg, rgba(15,255,0,1) 0%, rgba(255,240,0,1) 50%, rgba(255,0,0,1) 100%);
+            margin-left: 10px;  
+            border-radius: 20px;
+            /*float: right;*/
+        }
+        
         .names span {
             color: #044B7F;
             font-size: 10px;
             top: 2px;
             font-weight: bold;
-           position: relative;
-           text-align: center;
+            position: relative;
+            text-align: center;
         }
-
+        
         input[type=text] {
             border-radius: 10px;
             padding: 5px;
@@ -82,18 +90,19 @@
             border-style: solid;
             box-shadow: none;
             text-shadow: none;
-
         }
-        .howcontentlooks{
+        
+        .howcontentlooks {
             border-color: green;
-            border-radius:15px;
+            border-radius: 15px;
         }
-        .inline2{
-            display: inline;
+        
+        .info-row {
+            /*display: inline;*/
+            display: flex;
+            align-items: center;
         }
-        .inline1{
-            display: inline;
-        }
+        
     </style>
 
     <script type="text/javascript" src="grammar.js"></script>
@@ -103,32 +112,33 @@
 </head>
 
 <body>
-    <div id="content">
+    
         <input type="image" src="logo.png" name="image" width="150" height="95">
-       
+<div id="content">
         <div class="howcontentlooks">
             <span id="thewhereithappens">Content looks reliable</span>
         </div>
-        <h2 >We checked</h2> <h2 id="website"></h2><h2> and found: </h2>
+        <h2>We checked</h2>
+        <h2 id="website"></h2>
+        <h2> and found: </h2>
         <div class="names">
             <span>Political Affiliation</span>
-        </div>  
+        </div>
         <span id="category"></span>
-        <div class="inline1">
-        <div class="names">
-            <span>Degree of Bias</span>
+        <div class="info-row">
+            <div class="names">
+                <span>Degree of Bias</span>
+            </div>
+            <div class="gradientbar" id="bias"></div>
         </div>
-        <div class="gradientbar" id="bias"></div>
-        </div>
-        <div class="inline2">
-        <div class="names">
-            <span>Click-Bait</span>
-        </div>
-        <div class="gradientbar" id="clickbait"></div>
+        <div class="info-row">
+            <div class="names">
+                <span>Click-Bait</span>
+            </div>
+            <div class="gradientbar" id="clickbait"></div>
         </div>
         <h4 id="date"></h4>
 
-        
         <input type="text" placeholder="Paste your claim here" id="claim">
         <button type="button" class="fancybutton">Fact Check</button>
         <div class="hi">
@@ -137,8 +147,8 @@
         </div>
         <div id="demo">
             <form action="/action_page.php">
-                <input type="text" id="sentence" placeholder ="Paste the text here">
-           
+                <input type="text" id="sentence" placeholder="Paste the text here">
+
                 <button type="button" class="fancybutton" onclick="grammar()">Grammar</button>
             </form>
         </div>
